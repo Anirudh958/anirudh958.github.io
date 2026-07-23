@@ -8,14 +8,6 @@ toc: true
 comments: true
 ---
 
-# JWT Security Deep Dive: How JSON Web Tokens Work, Why They Break, and How Attackers Exploit Them
-
-> **Audience:** Beginners to intermediate cybersecurity enthusiasts, penetration testers, CTF players, and web developers.
->
-> **Prerequisites:** Basic understanding of HTTP requests and web applications.
-
----
-
 # Introduction
 
 Authentication is one of the most fundamental problems every web application has to solve.
