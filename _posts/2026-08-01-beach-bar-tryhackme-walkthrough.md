@@ -290,5 +290,3 @@ THM{...}
 - PyYAML unsafe load: see the [PyYAML documentation](https://pyyaml.org/wiki/PyYAMLDocumentation) and the `yaml.safe_load()` recommendation.
 - Reverse shell one-liners and the `bash -i >& /dev/tcp/` pattern: see [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodologies%20and%20Resources/Reverse%20Shell%20Cheatsheet.md).
 - PTY spawn trick: `python3 -c 'import pty; pty.spawn("/bin/bash")'` - part of the standard [Linux privilege escalation checklist](https://gtfobins.github.io/).
-
-Want more web auth failure cases? The [JWT Security Deep Dive]({% post_url 2026-07-21-jwt-security-deep-dive %}) covers the token side, and [Cryptography Fundamentals for Hackers]({% post_url 2026-07-24-cryptography-fundamentals-for-hackers %}) has the math behind common crypto breaks.
