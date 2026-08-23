@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Linux LPE disclosure timeline</title>
+  <desc id="desc">Timeline of Linux privilege escalation CVE disclosures from Dirty COW in 2016 through the 2026 wave, highlighting the recurring Dirty family of bugs.</desc>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#d99b42"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="560" fill="#151719"/>
+  <path d="M70 60h1060v440H70z" fill="none" stroke="#30353a" stroke-width="2"/>
+
+  <text x="110" y="130" fill="#d99b42" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26" letter-spacing="4">LINUX LPE DISCLOSURES · 2016 – 2026</text>
+
+  <!-- baseline -->
+  <line x1="90" y1="320" x2="1110" y2="320" stroke="#aeb4b9" stroke-width="2"/>
+
+  <!-- year ticks -->
+  <g stroke="#aeb4b9" stroke-width="2">
+    <line x1="110" y1="314" x2="110" y2="326"/>
+    <line x1="200" y1="314" x2="200" y2="326"/>
+    <line x1="545" y1="314" x2="545" y2="326"/>
+    <line x1="575" y1="314" x2="575" y2="326"/>
+    <line x1="650" y1="314" x2="650" y2="326"/>
+    <line x1="740" y1="314" x2="740" y2="326"/>
+    <line x1="830" y1="314" x2="830" y2="326"/>
+    <line x1="1010" y1="314" x2="1010" y2="326"/>
+  </g>
+  <g fill="#aeb4b9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" text-anchor="middle">
+    <text x="110" y="356">2016</text>
+    <text x="200" y="356">2017</text>
+    <text x="560" y="356">2021</text>
+    <text x="650" y="356">2022</text>
+    <text x="740" y="356">2023</text>
+    <text x="830" y="356">2024</text>
+    <text x="1010" y="356">2026</text>
+  </g>
+
+  <!-- events above the line -->
+  <circle cx="110" cy="320" r="8" fill="#d99b42"/>
+  <line x1="110" y1="298" x2="110" y2="310" stroke="#d99b42" stroke-width="2"/>
+  <text x="110" y="290" fill="#d99b42" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" font-weight="700" text-anchor="middle">Dirty COW</text>
+
+  <circle cx="545" cy="320" r="8" fill="#f3eee4"/>
+  <line x1="530" y1="258" x2="543" y2="310" stroke="#aeb4b9" stroke-width="1.5"/>
+  <text x="530" y="250" fill="#f3eee4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" text-anchor="middle">Baron Samedit</text>
+
+  <circle cx="575" cy="320" r="8" fill="#f3eee4"/>
+  <line x1="600" y1="233" x2="577" y2="310" stroke="#aeb4b9" stroke-width="1.5"/>
+  <text x="600" y="225" fill="#f3eee4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" text-anchor="middle">x_tables Heap OOB</text>
+
+  <circle cx="650" cy="320" r="8" fill="#d99b42"/>
+  <line x1="650" y1="298" x2="650" y2="310" stroke="#d99b42" stroke-width="2"/>
+  <text x="650" y="290" fill="#d99b42" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" font-weight="700" text-anchor="middle">Dirty Pipe</text>
+
+  <circle cx="830" cy="320" r="8" fill="#f3eee4"/>
+  <line x1="830" y1="298" x2="830" y2="310" stroke="#aeb4b9" stroke-width="1.5"/>
+  <text x="830" y="290" fill="#f3eee4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" text-anchor="middle">Netfilter UAF ×2</text>
+
+  <!-- events below the line -->
+  <circle cx="200" cy="320" r="8" fill="#f3eee4"/>
+  <line x1="200" y1="330" x2="200" y2="372" stroke="#aeb4b9" stroke-width="1.5"/>
+  <text x="200" y="394" fill="#f3eee4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" text-anchor="middle">eBPF Verifier Bug</text>
+
+  <circle cx="662" cy="320" r="8" fill="#f3eee4"/>
+  <line x1="662" y1="330" x2="662" y2="372" stroke="#aeb4b9" stroke-width="1.5"/>
+  <text x="662" y="394" fill="#f3eee4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" text-anchor="middle">PwnKit</text>
+
+  <circle cx="740" cy="320" r="8" fill="#f3eee4"/>
+  <line x1="740" y1="330" x2="740" y2="372" stroke="#aeb4b9" stroke-width="1.5"/>
+  <text x="740" y="394" fill="#f3eee4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" text-anchor="middle">OverlayFS</text>
+
+  <!-- 2026 wave box -->
+  <rect x="910" y="110" width="210" height="140" rx="6" fill="#1d2023" stroke="#d99b42" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="1015" y="140" fill="#d99b42" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="700" text-anchor="middle">THE 2026 WAVE</text>
+  <g fill="#f3eee4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" text-anchor="middle">
+    <text x="1015" y="166">Copy Fail · Dirty Frag</text>
+    <text x="1015" y="188">Fragnesia · PEdit-CoW</text>
+    <text x="1015" y="210">Januscape · ptrace Race</text>
+    <text x="1015" y="232">RefluXFS</text>
+  </g>
+  <circle cx="1010" cy="320" r="8" fill="#d99b42"/>
+  <line x1="1013" y1="252" x2="1010" y2="306" stroke="#d99b42" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- legend -->
+  <circle cx="115" cy="472" r="7" fill="#d99b42"/>
+  <text x="132" y="478" fill="#aeb4b9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">“Dirty” family</text>
+  <circle cx="275" cy="472" r="7" fill="#f3eee4"/>
+  <text x="292" y="478" fill="#aeb4b9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16">Other LPEs</text>
+  <text x="1090" y="478" fill="#6c7278" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" text-anchor="end">// remember the primitive, not the CVE name</text>
+</svg>

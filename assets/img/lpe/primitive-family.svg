@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">LPE primitive family map</title>
+  <desc id="desc">Map showing how fifteen Linux privilege escalation CVEs collapse into four exploitation families — page-cache writes, broken copy-on-write assumptions, kernel heap corruption, and privileged program abuse — all ending at root.</desc>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#d99b42"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="600" fill="#151719"/>
+  <path d="M70 60h1060v480H70z" fill="none" stroke="#30353a" stroke-width="2"/>
+
+  <text x="110" y="125" fill="#d99b42" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26" letter-spacing="4">SAME PRIMITIVE, DIFFERENT BUGS</text>
+  <text x="110" y="160" fill="#aeb4b9" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-style="italic">Fifteen CVEs collapse into four families — all ending at the same place.</text>
+
+  <!-- Family 1: page cache -->
+  <rect x="90" y="190" width="400" height="118" rx="6" fill="#1d2023" stroke="#d99b42" stroke-width="1.5"/>
+  <text x="110" y="222" fill="#d99b42" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" font-weight="700">PAGE-CACHE WRITE PRIMITIVE</text>
+  <g fill="#f3eee4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17">
+    <text x="110" y="252">Dirty Pipe · Copy Fail</text>
+    <text x="110" y="280">Dirty Frag · Fragnesia</text>
+  </g>
+
+  <!-- Family 2: CoW -->
+  <rect x="90" y="326" width="400" height="88" rx="6" fill="#1d2023" stroke="#30353a" stroke-width="1.5"/>
+  <text x="110" y="358" fill="#f3eee4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" font-weight="700">BROKEN CoW ASSUMPTION</text>
+  <text x="110" y="392" fill="#aeb4b9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17">Dirty COW · PEdit-CoW · RefluXFS</text>
+
+  <!-- Family 3: heap -->
+  <rect x="90" y="430" width="400" height="100" rx="6" fill="#1d2023" stroke="#30353a" stroke-width="1.5"/>
+  <text x="110" y="462" fill="#f3eee4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" font-weight="700">KERNEL HEAP CORRUPTION</text>
+  <g fill="#aeb4b9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17">
+    <text x="110" y="492">Netfilter UAF · x_tables OOB</text>
+    <text x="110" y="514">eBPF Verifier · Januscape</text>
+  </g>
+
+  <!-- arrows to ROOT -->
+  <line x1="500" y1="249" x2="750" y2="330" stroke="#d99b42" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="500" y1="370" x2="750" y2="350" stroke="#aeb4b9" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="500" y1="478" x2="750" y2="368" stroke="#aeb4b9" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- ROOT box -->
+  <rect x="760" y="278" width="340" height="144" rx="8" fill="#1d2023" stroke="#d99b42" stroke-width="2.5"/>
+  <rect x="768" y="286" width="324" height="128" rx="6" fill="none" stroke="#30353a" stroke-width="1"/>
+  <text x="930" y="352" fill="#d99b42" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="700" text-anchor="middle">ROOT</text>
+  <text x="930" y="388" fill="#aeb4b9" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" text-anchor="middle">uid=0(root) gid=0(root)</text>
+
+  <!-- footer -->
+  <text x="600" y="572" fill="#6c7278" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" text-anchor="middle">// every family breaks a different trust boundary — learn the primitive, not the CVE</text>
+</svg>
