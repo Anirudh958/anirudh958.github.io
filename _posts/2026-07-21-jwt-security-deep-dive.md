@@ -4,11 +4,14 @@ date: 2026-07-21 10:00:00 +0530
 categories: [Cybersecurity, Web Security]
 tags: [jwt, json-web-tokens, authentication, security, pentesting]
 description: "A comprehensive guide to JSON Web Tokens, covering how they work, common vulnerabilities, and how attackers exploit weak implementations."
+image:
+  path: /assets/img/social/jwt-security.png
+  alt: "JWT Security Deep Dive: token structure, verification failures, and defensive guidance"
 toc: true
 comments: true
 ---
 
-# Introduction
+## Introduction
 
 Authentication is one of the most fundamental problems every web application has to solve.
 
@@ -29,7 +32,7 @@ By the end of this article, you should understand not only *what* a JWT is, but 
 
 ---
 
-# Why Do We Need Authentication?
+## Why Do We Need Authentication?
 
 Imagine a website where every page request required entering your username and password.
 
@@ -53,7 +56,7 @@ This remembered identity is called a **session**.
 
 ---
 
-# Traditional Session-Based Authentication
+## Traditional Session-Based Authentication
 
 Historically, websites solved this problem using server-side sessions.
 
@@ -106,7 +109,7 @@ The important point is:
 
 ---
 
-# The Problem with Traditional Sessions
+## The Problem with Traditional Sessions
 
 While secure and widely used, server-side sessions have some drawbacks.
 
@@ -120,7 +123,7 @@ JWTs were introduced to solve this scalability problem.
 
 ---
 
-# What is a JSON Web Token (JWT)?
+## What is a JSON Web Token (JWT)?
 
 A JWT is a compact, digitally signed token that allows the server to verify user information without storing session data.
 
@@ -162,7 +165,7 @@ This is why JWT authentication is called **stateless authentication**.
 
 ---
 
-# JWT Structure
+## JWT Structure
 
 Every JWT has three components.
 
@@ -180,7 +183,7 @@ Each part is Base64URL encoded.
 
 ---
 
-# Part 1 — Header
+## Part 1 — Header
 
 Example:
 
@@ -202,7 +205,7 @@ Anyone can decode it.
 
 ---
 
-# Part 2 — Payload
+## Part 2 — Payload
 
 Example:
 
@@ -240,7 +243,7 @@ Never place secrets inside the payload.
 
 ---
 
-# Part 3 — Signature
+## Part 3 — Signature
 
 The signature is what makes JWTs trustworthy.
 
@@ -259,7 +262,7 @@ This prevents users from modifying the payload.
 
 ---
 
-# Why Can't We Simply Modify the Payload?
+## Why Can't We Simply Modify the Payload?
 
 Suppose your JWT contains:
 
@@ -301,7 +304,7 @@ Authentication fails.
 
 ---
 
-# Base64 Is NOT Encryption
+## Base64 Is NOT Encryption
 
 This is one of the most common misconceptions.
 
@@ -326,7 +329,7 @@ You can verify this using online Base64 decoders or command-line tools.
 
 ---
 
-# The Difference Between Signing and Encryption
+## The Difference Between Signing and Encryption
 
 Signing provides:
 
@@ -343,7 +346,7 @@ That means everyone can read the payload, but nobody should be able to modify it
 
 ---
 
-# Authentication vs Authorization
+## Authentication vs Authorization
 
 These terms are often confused.
 
@@ -374,13 +377,13 @@ The application must still verify permissions.
 
 ---
 
-# Common JWT Vulnerabilities
+## Common JWT Vulnerabilities
 
 Understanding these mistakes is critical for both penetration testing and CTFs.
 
 ---
 
-## 1. Hardcoded Secret Keys
+### 1. Hardcoded Secret Keys
 
 One of the most dangerous mistakes is exposing the signing key to the client.
 
@@ -414,7 +417,7 @@ This completely defeats the purpose of using JWTs.
 
 ---
 
-## 2. Weak Secret Keys
+### 2. Weak Secret Keys
 
 Examples:
 
@@ -434,7 +437,7 @@ Always use long, random, cryptographically secure secrets.
 
 ---
 
-## 3. Accepting "alg":"none"
+### 3. Accepting "alg":"none"
 
 Older JWT libraries sometimes accepted:
 
@@ -454,7 +457,7 @@ Modern libraries reject this by default, but understanding the historical vulner
 
 ---
 
-## 4. Trusting User-Controlled Claims
+### 4. Trusting User-Controlled Claims
 
 Never assume:
 
@@ -472,7 +475,7 @@ Authorization decisions should be made carefully, ideally using trusted server-s
 
 ---
 
-## 5. Long-Lived Tokens
+### 5. Long-Lived Tokens
 
 Tokens without expiration can remain valid indefinitely if stolen.
 
@@ -486,7 +489,7 @@ and keep access tokens short-lived.
 
 ---
 
-# How JWT Verification Works
+## How JWT Verification Works
 
 Every request follows this process:
 
@@ -528,7 +531,7 @@ Everything depends on the server protecting its signing key.
 
 ---
 
-# Recognizing JWT Vulnerabilities During Security Assessments
+## Recognizing JWT Vulnerabilities During Security Assessments
 
 When testing an application, you should examine how JWTs are used rather than assuming they are secure.
 
@@ -547,7 +550,7 @@ These observations often reveal implementation weaknesses.
 
 ---
 
-# How to Practice JWT Security
+## How to Practice JWT Security
 
 If you're learning penetration testing or preparing for CTFs, build small applications that implement JWT authentication correctly, then intentionally introduce one vulnerability at a time. For example:
 
@@ -561,7 +564,7 @@ Understanding both the secure and insecure versions is one of the fastest ways t
 
 ---
 
-# Best Practices for Developers
+## Best Practices for Developers
 
 A secure JWT implementation should follow these principles:
 
@@ -577,7 +580,7 @@ A secure JWT implementation should follow these principles:
 
 ---
 
-# Key Takeaways
+## Key Takeaways
 
 JWTs are neither inherently secure nor inherently insecure—they are simply a mechanism for representing claims.
 
@@ -596,3 +599,7 @@ Remember these core principles:
 Whether you're solving CTF challenges, conducting penetration tests, or building production web applications, understanding these concepts will help you recognize dangerous implementations and design secure ones.
 
 Security is rarely about memorizing vulnerabilities—it is about understanding the assumptions a system makes and verifying whether those assumptions can be broken.
+
+## Continue Learning
+
+JWT signatures rely on the same mathematical and cryptographic assumptions used throughout modern security systems. Continue with [Cryptography Fundamentals for Hackers and Security Engineers]({% post_url 2026-07-24-cryptography-fundamentals-for-hackers %}) to build that foundation, including modular arithmetic, RSA, and discrete logarithms.

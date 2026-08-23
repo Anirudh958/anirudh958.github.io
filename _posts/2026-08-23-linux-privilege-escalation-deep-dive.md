@@ -37,6 +37,10 @@ Here's the full list of LPEs we'll cover:
 14. ptrace Exit-Race
 15. RefluXFS
 
+![Timeline of Linux LPE disclosures from Dirty COW in 2016 through the 2026 wave of bugs](/assets/img/lpe/timeline.svg)
+
+*A decade of Linux privilege escalation — and the "Dirty" family just keeps coming back.*
+
 ---
 
 ## The Basics of Access
@@ -703,6 +707,10 @@ No. And the distinction matters.
 | Fragnesia     | Fragment handling flaw in networking/XFRM paths       |
 
 Different bug, different subsystem, different root cause. But sometimes — the same final primitive. And that overlap is exactly what makes vulnerability research interesting.
+
+![Map of how fifteen LPE CVEs collapse into four exploitation families that all end at root](/assets/img/lpe/primitive-family.svg)
+
+*Fifteen CVEs, four families, one destination.*
 
 ---
 
