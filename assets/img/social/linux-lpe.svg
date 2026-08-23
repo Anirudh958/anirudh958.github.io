@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Linux Privilege Escalation</title>
+  <desc id="desc">Social card for Linux privilege escalation CVEs, from Dirty COW to RefluXFS.</desc>
+  <rect width="1200" height="630" fill="#151719"/>
+  <path d="M80 80h1040v470H80z" fill="none" stroke="#30353a" stroke-width="2"/>
+  <text x="120" y="160" fill="#d99b42" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="26" letter-spacing="4">LINUX / PRIVILEGE ESCALATION</text>
+  <text x="120" y="285" fill="#f3eee4" font-family="Georgia, 'Times New Roman', serif" font-size="75" font-weight="700">From Dirty COW to RefluXFS</text>
+  <text x="120" y="380" fill="#f3eee4" font-family="Georgia, 'Times New Roman', serif" font-size="75" font-weight="700">How Low-Priv Shells Become Root</text>
+  <text x="120" y="475" fill="#aeb4b9" font-family="Arial, sans-serif" font-size="29">SUID · Capabilities · Race conditions · Page cache · Kernel memory bugs</text>
+  <text x="880" y="170" fill="#d99b42" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="35">$ whoami</text>
+</svg>
