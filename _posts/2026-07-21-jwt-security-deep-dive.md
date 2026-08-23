@@ -599,7 +599,3 @@ Remember these core principles:
 Whether you're solving CTF challenges, conducting penetration tests, or building production web applications, understanding these concepts will help you recognize dangerous implementations and design secure ones.
 
 Security is rarely about memorizing vulnerabilities—it is about understanding the assumptions a system makes and verifying whether those assumptions can be broken.
-
-## Continue Learning
-
-JWT signatures rely on the same mathematical and cryptographic assumptions used throughout modern security systems. Continue with [Cryptography Fundamentals for Hackers and Security Engineers]({% post_url 2026-07-24-cryptography-fundamentals-for-hackers %}) to build that foundation, including modular arithmetic, RSA, and discrete logarithms.
