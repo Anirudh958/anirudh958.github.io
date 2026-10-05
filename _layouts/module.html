@@ -2,6 +2,8 @@
 layout: page
 ---
 
+{% include lang.html %}
+
 {% assign lp = site.data.learning_paths | where: 'id', page.path_id | first %}
 {% assign path_url = '/learning-paths/' | append: page.path_id | append: '/' %}
 {% assign modules = site.pages | where: 'layout', 'module' | where: 'path_id', page.path_id | sort: 'module' %}
@@ -24,7 +26,7 @@ layout: page
 <h1 class="dynamic-title">{{ page.title }}</h1>
 
 <div class="content">
-  {{ content }}
+  {% include refactor-content.html content=content lang=lang %}
 
   <h2 id="hands-on-lab">Hands-On Lab</h2>
   {% if page.room %}

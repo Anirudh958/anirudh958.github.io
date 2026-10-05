@@ -2,6 +2,8 @@
 layout: page
 ---
 
+{% include lang.html %}
+
 {% assign lp = site.data.learning_paths | where: 'id', page.path_id | first %}
 {% assign modules = site.pages | where: 'layout', 'module' | where: 'room', page.room_id | sort: 'module' %}
 
@@ -28,7 +30,7 @@ layout: page
 </header>
 
 <div class="content">
-  {{ content }}
+  {% include refactor-content.html content=content lang=lang %}
 
   {% if modules.size > 0 %}
     <h2 id="related-modules">Related Modules</h2>

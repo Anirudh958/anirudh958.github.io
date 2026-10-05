@@ -2,6 +2,8 @@
 layout: page
 ---
 
+{% include lang.html %}
+
 {% assign lp = site.data.learning_paths | where: 'id', page.path_id | first %}
 {% assign modules = site.pages | where: 'layout', 'module' | where: 'path_id', page.path_id | sort: 'module' %}
 
@@ -20,7 +22,7 @@ layout: page
     <li><i class="far fa-clock fa-fw"></i><strong>Estimated time:</strong> {{ lp.time }}</li>
   </ul>
 
-  {{ content }}
+  {% include refactor-content.html content=content lang=lang %}
 
   <h2 id="modules">Modules</h2>
   <ol class="lp-modules list-unstyled">
