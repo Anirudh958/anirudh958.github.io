@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Anirudh Gupta avatar</title>
+  <desc id="desc">The initials AG inside an amber hexagonal shield with a terminal prompt and circuit traces, on a charcoal background.</desc>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="62%">
+      <stop offset="0" stop-color="#23272c"/>
+      <stop offset="1" stop-color="#121416"/>
+    </radialGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f0b860"/>
+      <stop offset="1" stop-color="#c9872f"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="256" cy="256" r="256" fill="url(#bg)"/>
+
+  <!-- circuit traces leaving the shield -->
+  <g fill="none" stroke="#d99b42" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.55">
+    <path d="M403 171 438 151h30"/>
+    <path d="M403 341 438 361v34"/>
+    <path d="M109 341 74 361H44"/>
+    <path d="M109 171 74 151v-34"/>
+  </g>
+  <g fill="#d99b42" opacity="0.8">
+    <circle cx="468" cy="151" r="10"/>
+    <circle cx="438" cy="395" r="10"/>
+    <circle cx="44" cy="361" r="10"/>
+    <circle cx="74" cy="117" r="10"/>
+  </g>
+
+  <!-- hexagonal shield -->
+  <path d="M256 86 403 171v170L256 426 109 341V171Z" fill="#171a1d" stroke="url(#amber)" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M256 112 381 184v144L256 400 131 328V184Z" fill="none" stroke="#d99b42" stroke-width="2" opacity="0.35"/>
+
+  <!-- AG monogram -->
+  <g transform="translate(256 246) scale(0.74) translate(-265.5 -261)">
+    <path d="M111 351 197 151h40l86 200h-48l-18-45h-84l-18 45Zm78-85h52l-26-66Z" fill="#f3eee4"/>
+    <path d="M395 218c-18-20-39-29-65-29-42 0-69 30-69 68 0 41 28 69 70 69 15 0 28-3 39-10v-32h-48v-39h91v94c-24 18-52 27-84 27-69 0-119-46-119-109 0-62 50-108 119-108 39 0 72 13 97 40Z" fill="url(#amber)"/>
+  </g>
+
+  <!-- terminal prompt -->
+  <path d="m230 340 16 13-16 13" fill="none" stroke="#f3eee4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="254" y="360" width="30" height="7" rx="3.5" fill="#d99b42"/>
+</svg>

@@ -1,0 +1,318 @@
+---
+---
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+
+$accent: #d99e43;
+
+/* ---------- Sidebar dropdowns ---------- */
+
+#sidebar li.nav-group {
+  details > summary {
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    color: var(--sidebar-muted-color);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:hover {
+      background-color: var(--sidebar-hover-bg);
+    }
+
+    i {
+      font-size: 95%;
+      opacity: 0.8;
+      margin-right: 1.5rem;
+    }
+
+    span {
+      font-size: 90%;
+      letter-spacing: 0.2px;
+    }
+
+    .nav-caret {
+      margin: 0 0 0 auto;
+      transition: transform 0.2s;
+    }
+  }
+
+  details[open] > summary .nav-caret {
+    transform: rotate(180deg);
+  }
+
+  &.active details > summary {
+    color: var(--sidebar-active-color);
+    background-color: var(--sidebar-hover-bg);
+  }
+
+  ul.nav-sub {
+    list-style: none;
+    margin: 0.25rem 0 0.5rem;
+    padding-left: 2.6rem;
+
+    li a {
+      display: block;
+      padding: 0.3rem 0.75rem;
+      border-radius: 0.5rem;
+      font-size: 85%;
+      color: inherit;
+      opacity: 0.85;
+
+      &:hover {
+        background-color: var(--sidebar-hover-bg);
+      }
+    }
+
+    li.active a {
+      color: var(--sidebar-active-color);
+      opacity: 1;
+      font-weight: 600;
+    }
+  }
+}
+
+/* ---------- Shared components ---------- */
+
+.lp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.content a.lp-card,
+a.lp-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  border: 1px solid var(--main-border-color);
+  border-radius: 0.75rem;
+  background: var(--card-bg);
+  color: var(--text-color);
+  text-decoration: none;
+  border-bottom: 1px solid var(--main-border-color);
+  transition: border-color 0.2s, transform 0.2s;
+
+  &:hover {
+    border-color: $accent;
+    transform: translateY(-2px);
+  }
+}
+
+.lp-card-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--heading-color);
+}
+
+.lp-card-text {
+  font-size: 0.9rem;
+  color: var(--text-muted-color);
+  flex-grow: 1;
+}
+
+.room-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.lp-badge,
+.lp-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.lp-badge {
+  background: rgb(217 158 67 / 15%);
+  color: $accent;
+}
+
+.lp-tag {
+  border: 1px solid var(--main-border-color);
+  color: var(--text-muted-color);
+}
+
+.lp-btn,
+.content a.lp-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  background: $accent;
+  color: #161616;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid $accent;
+
+  &:hover {
+    color: #161616;
+    filter: brightness(1.1);
+  }
+}
+
+.lp-btn-outline,
+.content a.lp-btn-outline {
+  background: transparent;
+  color: $accent;
+
+  &:hover {
+    color: $accent;
+  }
+}
+
+/* ---------- Homepage ---------- */
+
+.hero {
+  padding: 2.5rem 0 1.5rem;
+
+  .hero-tagline {
+    color: $accent;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-headline {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 1.75rem;
+  }
+}
+
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.home-posts li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--main-border-color);
+
+  .small {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
+/* ---------- Learning paths, modules, rooms ---------- */
+
+.lp-crumbs {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted-color);
+
+  span {
+    margin: 0 0.35rem;
+  }
+}
+
+.lp-crumbs + .dynamic-title,
+.lp-kicker + .dynamic-title {
+  margin-top: 0.5rem;
+}
+
+.lp-kicker {
+  margin: 1rem 0 0;
+  color: $accent;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.lp-meta li {
+  margin-bottom: 0.4rem;
+
+  i {
+    color: $accent;
+    margin-right: 0.5rem;
+  }
+}
+
+.content .lp-modules li a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid var(--main-border-color);
+  border-radius: 0.75rem;
+  border-bottom: 1px solid var(--main-border-color);
+  color: var(--text-color);
+  text-decoration: none;
+
+  &:hover {
+    border-color: $accent;
+  }
+}
+
+.lp-module-num {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: $accent;
+  min-width: 2rem;
+}
+
+.lp-module-title {
+  flex-grow: 1;
+}
+
+.lp-pager {
+  margin: 2.5rem 0 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--main-border-color);
+}
+
+.room-banner {
+  margin: 0.5rem 0 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--main-border-color);
+  border-left: 4px solid $accent;
+  border-radius: 0.75rem;
+  background: var(--card-bg);
+
+  .dynamic-title {
+    margin-top: 0;
+  }
+}
+
+.content details {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--main-border-color);
+  border-radius: 0.5rem;
+
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
+}

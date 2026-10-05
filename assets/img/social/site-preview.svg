@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Anirudh Gupta Security</title>
+  <desc id="desc">Social preview for practical cybersecurity research and tested security engineering guides.</desc>
+  <rect width="1200" height="630" fill="#151719"/>
+  <path d="M0 80h1200M0 550h1200M90 0v630M1110 0v630" stroke="#2c3034" stroke-width="2"/>
+  <rect x="90" y="80" width="12" height="470" fill="#d99b42"/>
+  <text x="150" y="185" fill="#d99b42" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="27" letter-spacing="5">ANIRUDH GUPTA</text>
+  <text x="150" y="310" fill="#f3eee4" font-family="Georgia, 'Times New Roman', serif" font-size="78" font-weight="700">Practical cybersecurity</text>
+  <text x="150" y="400" fill="#f3eee4" font-family="Georgia, 'Times New Roman', serif" font-size="78" font-weight="700">research and field notes.</text>
+  <text x="150" y="485" fill="#aeb4b9" font-family="Arial, sans-serif" font-size="28">Web security · Cryptography · AI-assisted pentesting · Defense</text>
+</svg>

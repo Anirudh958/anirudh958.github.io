@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Anirudh Gupta avatar</title>
+  <desc id="desc">A dark hooded figure with an amber visor across the eyes and an amber outline, on a charcoal background.</desc>
+  <clipPath id="c"><circle cx="256" cy="256" r="256"/></clipPath>
+  <g clip-path="url(#c)">
+    <rect width="512" height="512" fill="#16191c"/>
+    <path d="M256 84C158 84 112 164 112 248c0 58 18 106 50 140C108 404 70 446 58 512h396c-12-66-50-108-104-124 32-34 50-82 50-140 0-84-46-164-144-164Z" fill="#2a2f35"/>
+    <path d="M256 168c-50 0-80 44-80 98 0 58 36 102 80 102s80-44 80-102c0-54-30-98-80-98Z" fill="#0a0b0c"/>
+    <g stroke="#4a5058" stroke-width="7" stroke-linecap="round"><path d="M226 392v52"/><path d="M286 392v52"/></g><g fill="#4a5058"><circle cx="226" cy="450" r="8"/><circle cx="286" cy="450" r="8"/></g>
+    <rect x="190" y="256" width="132" height="20" rx="10" fill="#d99b42"/><path d="M256 84C158 84 112 164 112 248c0 58 18 106 50 140C108 404 70 446 58 512h396c-12-66-50-108-104-124 32-34 50-82 50-140 0-84-46-164-144-164Z" fill="none" stroke="#d99b42" stroke-width="6" opacity="0.5"/>
+  </g>
+</svg>
