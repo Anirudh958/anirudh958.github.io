@@ -1,0 +1,25 @@
+# Profile data shared by the homepage hero and the About page.
+
+headline: "I build hands-on security labs, break AI systems, and publish what I find."
+
+# Leave `url` empty until the profile link is ready; the link renders as "will be updated".
+links:
+  - title: GitHub
+    icon: fab fa-github
+    url: https://github.com/Anirudh958
+  - title: TryHackMe
+    icon: fas fa-flag
+    url:
+  - title: Let Us Hack
+    icon: fas fa-users
+    url:
+  - title: LinkedIn
+    icon: fab fa-linkedin
+    url: https://www.linkedin.com/in/anirudh-gupta-surisetty-80033a327/
+  - title: Blog
+    icon: fas fa-feather-alt
+    url: /blog/
+
+creator:
+  rooms_built: Will be updated
+  topics: [AI Security, Red Teaming, Cloud Security]

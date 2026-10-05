@@ -1,0 +1,40 @@
+---
+layout: page
+---
+
+{% assign lp = site.data.learning_paths | where: 'id', page.path_id | first %}
+{% assign modules = site.pages | where: 'layout', 'module' | where: 'path_id', page.path_id | sort: 'module' %}
+
+<nav class="lp-crumbs" aria-label="Section">
+  <a href="{{ '/learning-paths/' | relative_url }}">Learning Paths</a>
+</nav>
+
+<h1 class="dynamic-title"><i class="{{ lp.icon }} fa-fw me-2"></i>{{ page.title }}</h1>
+
+<div class="content">
+  <p class="lead">{{ lp.why }}</p>
+
+  <ul class="lp-meta list-unstyled">
+    <li><i class="fas fa-list-check fa-fw"></i><strong>Prerequisites:</strong> {{ lp.prerequisites }}</li>
+    <li><i class="fas fa-signal fa-fw"></i><strong>Difficulty:</strong> {{ lp.difficulty }}</li>
+    <li><i class="far fa-clock fa-fw"></i><strong>Estimated time:</strong> {{ lp.time }}</li>
+  </ul>
+
+  {{ content }}
+
+  <h2 id="modules">Modules</h2>
+  <ol class="lp-modules list-unstyled">
+    {% for m in modules %}
+      <li>
+        <a href="{{ m.url | relative_url }}">
+          <span class="lp-module-num">{{ m.module | prepend: '0' | slice: -2, 2 }}</span>
+          <span class="lp-module-title">{{ m.title }}</span>
+          {% if m.room %}<span class="lp-badge"><i class="fas fa-flask"></i> Hands-on lab</span>{% endif %}
+        </a>
+      </li>
+    {% endfor %}
+  </ol>
+
+  <h2 id="rooms">Hands-On Rooms</h2>
+  {% include room-list.html path=page.path_id %}
+</div>

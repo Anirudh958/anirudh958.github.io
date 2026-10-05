@@ -1,0 +1,11 @@
+---
+layout: page
+title: Rooms & Labs
+---
+
+<p>Hands-on labs built in the TryHackMe room format: scenario, tasks, hints, architecture, and build notes.</p>
+
+{% for lp in site.data.learning_paths %}
+  <h2 id="{{ lp.id }}">{{ lp.title }} Rooms</h2>
+  {% include room-list.html path=lp.id %}
+{% endfor %}

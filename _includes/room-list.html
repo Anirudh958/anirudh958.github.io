@@ -1,0 +1,24 @@
+{%- comment -%}
+  Lists room pages as cards. Pass `path` to limit to one learning path.
+{%- endcomment -%}
+{% assign rooms = site.pages | where: 'layout', 'room' | sort: 'title' %}
+{% if include.path %}
+  {% assign rooms = rooms | where: 'path_id', include.path %}
+{% endif %}
+
+{% if rooms.size > 0 %}
+  <div class="lp-grid">
+    {% for room in rooms %}
+      <a class="lp-card" href="{{ room.url | relative_url }}">
+        <span class="lp-card-title"><i class="fas fa-flask fa-fw"></i> {{ room.title }}</span>
+        <span class="lp-card-text">{{ room.description | default: 'Room details will be updated.' }}</span>
+        <span class="room-meta">
+          <span class="lp-badge"><i class="fas fa-signal"></i> {{ room.difficulty | default: 'TBD' }}</span>
+          <span class="lp-badge"><i class="far fa-clock"></i> {{ room.time | default: 'TBD' }}</span>
+        </span>
+      </a>
+    {% endfor %}
+  </div>
+{% else %}
+  <blockquote class="prompt-info"><p>Rooms will be updated.</p></blockquote>
+{% endif %}

@@ -1,0 +1,37 @@
+---
+layout: default
+title: Home
+---
+
+{% assign profile = site.data.profile %}
+
+<section class="hero">
+  <p class="hero-tagline">{{ site.tagline }}</p>
+  <h1 class="hero-headline">{{ profile.headline }}</h1>
+
+  <div class="hero-cta">
+    <a class="lp-btn" href="{{ '/rooms/' | relative_url }}">Explore my rooms →</a>
+    <a class="lp-btn lp-btn-outline" href="{{ '/research/' | relative_url }}">Read my research →</a>
+  </div>
+</section>
+
+<section class="content">
+  <h2 id="learning-paths">Learning Paths</h2>
+  {% include path-cards.html %}
+
+  <h2 id="latest-posts">Latest from the Blog</h2>
+  <ul class="home-posts list-unstyled">
+    {% for post in site.posts limit: 3 %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <span class="text-muted small">{{ post.date | date: '%b %-d, %Y' }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+  <p class="home-browse">
+    <a href="{{ '/blog/' | relative_url }}">All posts</a> ·
+    <a href="{{ '/categories/' | relative_url }}">Categories</a> ·
+    <a href="{{ '/tags/' | relative_url }}">Tags</a> ·
+    <a href="{{ '/archives/' | relative_url }}">Archives</a>
+  </p>
+</section>

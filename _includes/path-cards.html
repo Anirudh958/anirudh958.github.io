@@ -1,0 +1,16 @@
+{%- comment -%}
+  One card per learning path in `_data/learning_paths.yml`.
+{%- endcomment -%}
+<div class="lp-grid">
+  {% for lp in site.data.learning_paths %}
+    {% assign modules = site.pages | where: 'layout', 'module' | where: 'path_id', lp.id %}
+    <a class="lp-card" href="{{ '/learning-paths/' | append: lp.id | append: '/' | relative_url }}">
+      <span class="lp-card-title"><i class="{{ lp.icon }} fa-fw"></i> {{ lp.title }}</span>
+      <span class="lp-card-text">{{ lp.card }}</span>
+      <span class="room-meta">
+        <span class="lp-badge">{{ modules.size }} modules</span>
+        <span class="lp-badge"><i class="far fa-clock"></i> {{ lp.time }}</span>
+      </span>
+    </a>
+  {% endfor %}
+</div>

@@ -1,0 +1,43 @@
+# Path-level metadata for the learning paths.
+#
+# Modules and rooms are pages that reference a path through `path_id` in their front matter:
+#   /learning-paths/<id>/<NN-module>/index.md  (layout: module)
+#   /rooms/<id>/<room>/index.md                (layout: room)
+
+- id: ai-security
+  title: AI Security
+  icon: fas fa-robot
+  card: "Prompt injection, agent hijacking, MCP tool poisoning, supply chain attacks, model theft, AI-powered offense, and defense."
+  why: >-
+    Most AI security content stops at prompt injection CTFs. Real threat actors are poisoning
+    model supply chains, weaponizing MCP tool servers, hijacking autonomous agents, exploiting
+    ML pipelines, stealing models, and putting AI agents to work as attackers. This path teaches what they
+    actually do, and how to defend against it.
+  prerequisites: Basic Python, basic understanding of LLMs
+  difficulty: Intermediate → Advanced
+  time: 40+ hours
+
+- id: red-teaming
+  title: Red Teaming
+  icon: fas fa-user-secret
+  card: "Follow the kill chain from recon and initial access to domain dominance and exfiltration."
+  why: >-
+    Red teaming isn't running Nmap and submitting a report. It's simulating a real adversary — from
+    initial access through domain dominance to data exfiltration — while evading detection at every
+    step. This path follows the kill chain.
+  prerequisites: Networking fundamentals, basic Linux, completed some CTFs
+  difficulty: Intermediate → Advanced
+  time: 60+ hours
+
+- id: cloud-security
+  title: Cloud Security
+  icon: fas fa-cloud
+  card: "IAM exploitation, cross-account pivots, Kubernetes breakouts, and CI/CD pipeline attacks."
+  why: >-
+    Over 60% of cloud incidents in 2026 trace back to misconfigurations — not zero-day exploits.
+    Attackers don't hack cloud infrastructure. They log in with your leaked keys, escalate with your
+    overly permissive IAM roles, and exfiltrate through your own APIs. This path teaches you to think
+    like they do.
+  prerequisites: Basic AWS/Azure knowledge, networking fundamentals
+  difficulty: Intermediate → Advanced
+  time: 50+ hours

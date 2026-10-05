@@ -1,0 +1,52 @@
+---
+layout: page
+---
+
+{% assign lp = site.data.learning_paths | where: 'id', page.path_id | first %}
+{% assign path_url = '/learning-paths/' | append: page.path_id | append: '/' %}
+{% assign modules = site.pages | where: 'layout', 'module' | where: 'path_id', page.path_id | sort: 'module' %}
+
+{% for m in modules %}
+  {% if m.url == page.url %}
+    {% assign prev_index = forloop.index0 | minus: 1 %}
+    {% if forloop.first == false %}{% assign prev_module = modules[prev_index] %}{% endif %}
+    {% if forloop.last == false %}{% assign next_module = modules[forloop.index] %}{% endif %}
+  {% endif %}
+{% endfor %}
+
+<nav class="lp-crumbs" aria-label="Section">
+  <a href="{{ '/learning-paths/' | relative_url }}">Learning Paths</a>
+  <span>/</span>
+  <a href="{{ path_url | relative_url }}">{{ lp.title }}</a>
+</nav>
+
+<p class="lp-kicker">Module {{ page.module }} · {{ lp.title }} Path</p>
+<h1 class="dynamic-title">{{ page.title }}</h1>
+
+<div class="content">
+  {{ content }}
+
+  <h2 id="hands-on-lab">Hands-On Lab</h2>
+  {% if page.room %}
+    {% assign room = site.pages | where: 'layout', 'room' | where: 'room_id', page.room | first %}
+    <p>
+      Put this module into practice in
+      <a href="{{ room.url | relative_url }}"><i class="fas fa-flask"></i> {{ room.title }}</a>.
+    </p>
+  {% else %}
+    <blockquote class="prompt-info"><p>Hands-on lab reference will be updated.</p></blockquote>
+  {% endif %}
+</div>
+
+<nav class="lp-pager d-flex justify-content-between" aria-label="Module navigation">
+  {% if prev_module %}
+    <a href="{{ prev_module.url | relative_url }}"><i class="fas fa-angle-left"></i> Module {{ prev_module.module }}</a>
+  {% else %}
+    <a href="{{ path_url | relative_url }}"><i class="fas fa-angle-left"></i> Path overview</a>
+  {% endif %}
+  {% if next_module %}
+    <a href="{{ next_module.url | relative_url }}">Module {{ next_module.module }} <i class="fas fa-angle-right"></i></a>
+  {% else %}
+    <a href="{{ path_url | relative_url }}">Path overview <i class="fas fa-angle-right"></i></a>
+  {% endif %}
+</nav>

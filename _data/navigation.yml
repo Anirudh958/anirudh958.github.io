@@ -1,0 +1,43 @@
+# Sidebar navigation, rendered by `_includes/sidebar.html`.
+#
+# `match` lists URL prefixes that mark an entry as active (defaults to `url`).
+# Entries with `children` render as a collapsible dropdown.
+
+- title: Home
+  url: /
+  icon: fas fa-home
+
+- title: Learning Paths
+  url: /learning-paths/
+  icon: fas fa-route
+  children:
+    - title: AI Security
+      url: /learning-paths/ai-security/
+    - title: Red Teaming
+      url: /learning-paths/red-teaming/
+    - title: Cloud Security
+      url: /learning-paths/cloud-security/
+
+- title: Rooms & Labs
+  url: /rooms/
+  icon: fas fa-flask
+  children:
+    - title: AI Security Rooms
+      url: /rooms/ai-security/
+    - title: Red Team Rooms
+      url: /rooms/red-teaming/
+    - title: Cloud Security Rooms
+      url: /rooms/cloud-security/
+
+- title: Research
+  url: /research/
+  icon: fas fa-microscope
+
+- title: Blog
+  url: /blog/
+  icon: fas fa-feather-alt
+  match: [/blog/, /posts/, /categories/, /tags/, /archives/]
+
+- title: About
+  url: /about/
+  icon: fas fa-info-circle

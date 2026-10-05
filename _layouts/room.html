@@ -1,0 +1,41 @@
+---
+layout: page
+---
+
+{% assign lp = site.data.learning_paths | where: 'id', page.path_id | first %}
+{% assign modules = site.pages | where: 'layout', 'module' | where: 'room', page.room_id | sort: 'module' %}
+
+<nav class="lp-crumbs" aria-label="Section">
+  <a href="{{ '/rooms/' | relative_url }}">Rooms &amp; Labs</a>
+  <span>/</span>
+  <a href="{{ '/rooms/' | append: page.path_id | append: '/' | relative_url }}">{{ lp.title }} Rooms</a>
+</nav>
+
+<header class="room-banner">
+  <h1 class="dynamic-title">{{ page.title }}</h1>
+  <div class="room-meta">
+    <span class="lp-badge"><i class="fas fa-signal"></i> {{ page.difficulty | default: 'TBD' }}</span>
+    <span class="lp-badge"><i class="far fa-clock"></i> {{ page.time | default: 'TBD' }}</span>
+    {% for tag in page.tags %}
+      <span class="lp-tag">#{{ tag }}</span>
+    {% endfor %}
+  </div>
+  {% if page.repo %}
+    <a class="lp-btn mt-3" href="{{ page.repo }}" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-github"></i> Source code
+    </a>
+  {% endif %}
+</header>
+
+<div class="content">
+  {{ content }}
+
+  {% if modules.size > 0 %}
+    <h2 id="related-modules">Related Modules</h2>
+    <ul>
+      {% for m in modules %}
+        <li><a href="{{ m.url | relative_url }}">{{ lp.title }} · Module {{ m.module }}: {{ m.title }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
